@@ -1,0 +1,174 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 18/03/2024, 10:52:54 AM
+    Author     : Vicente
+*/
+/* Estilos personalizados */
+body {
+    /*background-color: #333;*/
+    background-color: #436194;
+    color: #fff;
+    padding-top: 85px; /* Para dejar espacio para el navbar fijo */
+}
+
+.navbar {
+    background-color: #000 !important;
+}
+.btn {
+    margin: 5px 15px 5px 20px;        
+}            
+ul {
+    margin-left: 20px; 
+}
+.xradio {
+    transform: scale(1.5);
+}
+/*.swal2-title {
+    font-size: 14px !important;  Tamaño de fuente más pequeño para el título 
+}
+.swal2-popup {
+    width: 50em !important;  Ancho máximo de la ventana emergente 
+    height: 20em !important;
+}*/
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #555;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* nuevas  */
+
+.card_login{
+    border-radius: 1.5rem; background-color: #1E2151;
+    padding: 2.5rem;  
+}
+
+.input-group .form-control {
+    padding: 10px 18px 10px 18px;
+}
+
+.input-group-prepend {
+    border-color: #00f2c3;
+
+}
+
+.form-control::placeholder {
+    color: #FFF;
+    background-color: transparent;
+
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(2.25rem + 2px);
+    padding: 0.5rem 0.7rem;
+    font-size: 0.875rem;
+    color: #FFF;
+    line-height: 1.428571;
+    background-color: transparent;
+    background-clip: padding-box;
+    border: 1px solid #cad1d7;
+    border-top-color: rgb(202, 209, 215);
+    border-right-color: rgb(202, 209, 215);
+    border-bottom-color: rgb(202, 209, 215);
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-left-color: rgb(202, 209, 215);
+    border-radius: 0.25rem;
+    box-shadow: none;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-control {
+    border-color: #2b3553;
+    border-left-color: rgb(43, 53, 83);
+    border-radius: 0.4285rem;
+    border-top-left-radius: 0.4285rem;
+    border-bottom-left-radius: 0.4285rem;
+    font-size: 0.75rem;
+}
+
+.form-control:focus{
+    border-color: #009DA5;
+    background-color: transparent;
+    color: #FFF;
+
+} 
+
+.btn-success {
+    background: #00f2c3;
+    background-color: rgb(0, 242, 195);
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-image: none;
+    background-size: auto;
+    background-image: -webkit-linear-gradient(to bottom left, #00f2c3, #0098f0, #00f2c3);
+    background-image: -o-linear-gradient(to bottom left, #00f2c3, #0098f0, #00f2c3);
+    background-image: -moz-linear-gradient(to bottom left, #00f2c3, #0098f0, #00f2c3);
+    background-image: linear-gradient(to bottom left, #00f2c3, #0098f0, #00f2c3);
+    background-size: 210% 210%;
+    background-position: top right;
+    background-color: #00f2c3;
+    transition: all 0.15s ease;
+    box-shadow: none;
+    color: #ffffff;
+    border: none;
+    border-radius: 0.4285rem;
+}
+
+.btn-primary{
+    background: #00f2c3;
+    background-color: rgb(0, 242, 195);
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-image: none;
+    background-size: auto;
+    background-image: -webkit-linear-gradient(to bottom left, #00f2c3, #0098f0, #00f2c3);
+    background-image: -o-linear-gradient(to bottom left, #00f2c3, #0098f0, #00f2c3);
+    background-image: -moz-linear-gradient(to bottom left, #00f2c3, #0098f0, #00f2c3);
+    background-image: linear-gradient(to bottom left, #00f2c3, #0098f0, #00f2c3);
+    background-size: 210% 210%;
+    background-position: top right;
+    background-color: #00f2c3;
+    transition: all 0.15s ease;
+    box-shadow: none;
+    color: #ffffff;
+    border: none;
+    border-radius: 0.4285rem;
+}
+
+
+.btn-primary:hover{
+    background-color: #0098f0 !important;
+    background-image: -moz-linear-gradient(to bottom left, #00f2c3, #0098f0, #00f2c3) !important;
+    color: #ffffff;
+    opacity: 0.9;
+    filter: alpha(opacity=100);
+    outline: 0 !important;
+    border-color: #00bf9a;
+}
+
+body {
+    background-color: #436194;
+    font-family: "Poppins", sans-serif!important;
+    background-image: url(images/back.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.input-group-text{
+    color: #FFF;
+    background-color: #1E2151;
+    border: 1px solid #1E2151 !important;
+    border-color: #1E2151;
+
+}
+

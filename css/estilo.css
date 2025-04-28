@@ -1,0 +1,324 @@
+
+.efeBtn:hover {
+    background-color: #454173; 
+    filter: brightness(120%); 
+    cursor: pointer;
+}
+
+.efeBtn2 { 
+    text-decoration: none; 
+    color:#002772;
+}
+
+.efeBtn2:hover { 
+    filter: brightness(105%); 
+    cursor: pointer;
+    text-decoration: none;
+    color: #002772;
+}
+
+.efeBtn2_img:hover { 
+    transform: scale(1.04);
+    transition: all 0.6s ease-out;
+    /* box-shadow: 0 0 0 1px #966FB3; */
+    transition: .5s ease;
+}
+
+/*
+.backBlue2 {
+    background-color: #335ca6; 
+    color: #FFF;
+} 
+
+.backBlue2 {
+    background-color: #4C6FB5; 
+    color: #FFF;
+}*/
+
+.backBlue2 {
+    background-color: #EBFCFF; 
+    color: #1C499A;
+} 
+
+
+/*
+.backBlue1 {
+    background-color: #072146!important; 
+    color: #FFF!important;
+}
+
+.encabezado1 {
+    color: #237ABA!important;
+}
+
+.btnGreen1 {
+    background-color: #028484; 
+    border-color: #028484;
+    color: #FFF;
+    font-weight: bold;
+}
+
+
+.btnGreen1:hover {
+    background-color: #028484; 
+    border-color: #02A5A5;
+    filter: brightness(120%); 
+    cursor: pointer;
+    transform: scale(1.04);
+    transition: all 0.6s ease-out;
+    box-shadow: 0 0 0 1px #02A5A5;
+    transition: .5s ease;
+}
+
+
+
+.backBlue1 {
+    background-color: #335CA6!important; 
+    color: #FFF!important;
+}
+*/
+.backBlue1 {
+    background-color: #004080!important; 
+    color: #FFF!important;
+}
+
+.encabezado1 {
+    /*color: #1C499A!important;
+    color: #1E969B !important;
+    color:#0080ff; */
+    color: #002772;
+}
+
+.eti{
+   color: #0097B0; 
+}
+
+
+.encabezado2 {
+    /* color: #FFF!important;
+    background-color: #1E969B;
+    color: #1C499A !important;
+    background-color: #5EC9ED;*/
+    color: #004080 !important;
+    background-color: #E6F0FF;
+    /* background-color: #E6ECF8;*/
+    padding: 0.7rem;
+    width: 75%;
+}
+
+.encabezado3 {
+    color: #91619A !important;
+    font-size: 2.3rem;
+    font-weight: bold;
+}
+
+.encabezado4 {
+    color: #91619A !important;
+    font-weight: bold;
+}
+
+
+.encabezado5 {
+    color: #004080 !important;
+    background-color: #E6F0FF;
+    padding: 0.7rem;
+    width: 90%;
+}
+
+.msj_01 {
+    color: #004080 !important;
+    background-color: #E6F0FF;
+}
+
+
+.btnGreen1 {
+    background-color: #41ABB0; 
+    border-color: #41ABB0;
+    color: #FFF;
+    font-weight: bold;
+}
+
+
+.btnGreen1:hover {
+    background-color: #41ABB0; 
+    border-color: #966FB3;
+    filter: brightness(120%); 
+    cursor: pointer;
+    transform: scale(1.04);
+    transition: all 0.6s ease-out;
+    box-shadow: 0 0 0 1px #966FB3;
+    transition: .5s ease;
+}
+
+.btn_02 {
+    background-color: #004080; 
+    border-color: #f5f9ff;
+    color: #f5f9ff;
+    font-weight: bold;
+    border-radius:0!important;
+}
+
+.btn_02:hover {        
+    cursor: pointer;
+    background-color: #007FB6; 
+    transform: scale(1.03);
+    transition: all 0.2s ease-out;
+    box-shadow: 0 0 0 1px #00BECC;
+    transition: .5s ease;
+    color:#FFF;
+}
+
+.titulo_tutoria_01{        
+    color: #007FB6;
+    /*font-weight: bold;*/
+    font-size: 18px;
+}
+
+/*
+.btn_02:hover {        
+    filter: brightness(90%); 
+    cursor: pointer;
+    background-color: #5ec9ed; 
+    transform: scale(1.03);
+    transition: all 0.6s ease-out;
+    box-shadow: 0 0 0 1px #5ec9ed;
+    transition: .5s ease;
+}*/
+
+.btn_03 {
+    background-color: #0080ff; 
+    border-color: #0080ff;
+    color: #f5f9ff;
+    font-weight: bold;
+    border-radius:0!important;
+}
+
+.btn_03:hover {        
+    filter: brightness(90%); 
+    cursor: pointer;
+    background-color: #5ec9ed; 
+    transform: scale(1.04);
+    transition: all 0.6s ease-out;
+    box-shadow: 0 0 0 1px #5ec9ed;
+    transition: .5s ease;
+}
+
+.fuente15{
+    font-size: 15px;
+}
+
+.fuente14{
+    font-size: 14px;
+}
+
+.fuente13{
+    font-size: 13px;
+}
+
+/*
+.pre1{
+    background-color: #e7e9f1 !important;;
+    padding: 0.5rem;
+    width: 75%;
+    color: #1C499A;
+}*/
+
+.pre1{
+    background-color: #EBFCFF !important;;
+    padding: 0.5rem;
+    width: 75%;
+    color: #1C499A;
+}
+
+
+#formulario1{
+    height: 58vh;
+    font-size: 32px;
+    /*color: #004080 !important;*/
+    font-weight: bold;
+}
+
+.for_rep_ind{
+    height: 58vh!important;
+    font-size: 18px!important;
+    color: #004080 !important;
+    font-weight: bold!important;
+}
+
+.back_portada_1{
+    background-image: url(../img/back_06.png)!important; 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position-y: 5%;
+}
+
+.btn_10{
+    background-color: #5EC9ED!important;
+    border-color: #5EC9ED !important;
+    border-radius: 0;
+    color: #FFF!important;
+    font-weight: bold;
+}
+
+.btn_10:hover {
+    /*background-color: #004080!important;*/
+    background-color: #007FB6!important; 
+    color: #FFF;
+    font-weight: bold;
+}
+
+.btn_11{
+   background-color: #97AFB9;
+   border-color: #f5f9ff;
+   color: #003855 !important;
+   font-weight: bold;
+   border-radius: 0 !important;
+}
+
+.btn_11:hover {
+    background-color: #007FB6!important; 
+    color: #FFF;
+    font-weight: bold;
+}
+
+.btn_13{
+   background-color: #D1F5FF;
+   border-color: #D1F5FF;
+   color: #007FB6 !important;
+   font-weight: bold;
+   border-radius: 0 !important;
+   font-size: 12px;
+}
+
+.btn_13:hover {
+    background-color: #5EC9ED!important;
+    border-color: #5EC9ED;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.titulo_tutoria_02{
+    color: #424656;
+    font-size: 18px;
+}
+
+.texto_01{
+    color: #424656;
+    font-size: 16px;
+}
+
+.btn_12{
+    background-color: #007FB6!important;
+    border-color: #007FB6!important;
+    border-radius: 0;
+    color: #FFF!important;
+    font-weight: bold;
+}
+
+
+.btn_12:hover {
+    background-color: #5EC9ED!important; 
+    color: #FFF;
+    font-weight: bold;
+}

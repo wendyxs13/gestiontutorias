@@ -1,0 +1,141 @@
+/* Estilos personalizados */
+body {    
+    color: #000;
+    padding-top: 85px; /* Para dejar espacio para el navbar fijo */   
+}
+#inicio {
+    cursor: pointer;
+}
+.navbar {
+    color: #fff;
+    background-color: #000 !important;
+    padding: 0 !important;
+}
+#mydatable tbody tr:nth-of-type(odd) { 
+    background-color: #e3f2fd !important; 
+}
+#mydatable tbody tr:nth-of-type(even) { 
+    background-color: #fce4ec !important; 
+}
+#mydatable tbody tr.selected { 
+    background-color: #c8e6c9 !important; 
+}
+
+.sidebar {
+    height: 100vh;
+    position: fixed;
+    top: 47px; /* Ajusta según la altura de tu navbar */
+    left: 0;
+    background-color: #000;
+    padding-top: 20px;
+    color: white;  
+}
+.sidebar a {
+    padding: 10px 20px;
+    display: block;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+.sidebar a:hover {
+    background-color: #333;
+}
+.content {
+    margin-left: 160px; /* Ajusta al ancho del sidebar */
+    margin-top:-33px;
+}
+#imgat {
+    width: 80%;
+}
+#title{
+    padding: 7px 0 0 0 ;    
+    text-align: center;
+    font-size: 2.0em;
+    color: darkblue;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    font-weight: 700;  
+}
+
+.mythead {
+    color: white;
+    background: #0d6efd;
+}
+th {
+    text-align: center;
+}
+.iconos  {
+    text-align: center;     
+}
+.iconos a {
+    cursor: pointer;  
+    color: #0098f0; 
+    font-weight: bolder;  
+    opacity: .8;
+
+}
+.iconos .bi {
+    font-size: 1.3rem
+}
+.iconos a:hover {
+    color: #000; 
+    opacity: 1;
+}
+footer {
+    /*    position: fixed;
+        bottom: 0;*/
+    width: 100%;
+    background-color: #555;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+#mnuCerrar, .dropdown-menu{
+    background: #000;     
+    margin-top: 25px;    
+    min-width: 3%;
+    padding: 5px;  
+    border-radius: 10px;
+}
+#closes:hover {
+    background: #555;
+    color: #fff !important;    
+    border-radius: 0 0 5px 5px;
+}
+
+/* Estilo del overlay (bloqueo de pantalla) */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Fondo gris con opacidad */
+    z-index: 9999; /* Asegura que esté al frente */
+    display: none; /* Oculto por defecto */
+}
+
+/* Estilo del GIF */
+#loading-icon {
+    //width: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.big-radio{
+    transform: scale(1.7);  /* Makes radio button bigger */                
+}
+.big-check{
+    transform: scale(1.7);  /* Makes radio button bigger */
+    margin: 0 5px 15px 0 !important;
+}
+checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;                
+}
+.checkbox-group label {
+    white-space: nowrap;
+    margin-right: 20px; 
+}

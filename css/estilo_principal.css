@@ -1,0 +1,66 @@
+    .back_principal{
+        background-image: url(../img/back_04.png)!important; 
+        background-size: cover; 
+        background-repeat: no-repeat; 
+        background-position-y: 83%;
+      }
+
+      .backBlue1 {
+        background-color: #004080!important; 
+        color: #FFF!important;
+      }
+
+      .titulo {
+        font-family: 'Bebas Neue', sans-serif;
+      }
+
+      .texto {
+        font-family: 'Source Sans 3', sans-serif;
+      }
+
+      .btn_01 {
+        background-color: #f5f9ff; 
+        border-color: #f5f9ff;
+        color: #004080;
+        font-weight: bold;
+        border-radius: 0;
+      }
+
+
+      .btn_01:hover {        
+        filter: brightness(120%); 
+        cursor: pointer;
+        transform: scale(1.04);
+        transition: all 0.6s ease-out;
+        box-shadow: 0 0 0 1px #5ec9ed;
+        transition: .5s ease;
+      }
+
+      .secc_01{
+        background-color: #fff;
+        color: #424656; 
+        font-size: 17px;
+        min-height: 200px;
+        font-family: 'Source Sans 3', sans-serif;
+      }
+
+      .back_01{
+        background-color: #5EC9ED!important;
+      }
+
+      .back_01:hover {
+        background-color: #004080!important;
+      }
+
+      .back_trans {
+        background-color: rgba(0, 27, 62, 0.52);
+        color:#fff;
+      }
+
+      .radio_0{
+        border: none!important; border-radius: 0!important;
+      }
+
+      .texto_FFF{
+        color:#fff!important;
+      }
