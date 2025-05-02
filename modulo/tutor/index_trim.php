@@ -303,10 +303,7 @@ if (isset($_SESSION['us_tutor'])) {
                                 <thead>
                                     <tr>                  
                                         <th scope="col" width="30%" class="text-left text-uppercase">Nombre</th>
-                                        
-                                        <th scope="col" width="5%" class="text-uppercase" data-toggle="tooltip" data-placement="top" title="Sexo asignado al nacer">
-                                            Sexo al nacer
-                                        </th>
+                                        <th scope="col" width="15%" class="text-uppercase" data-toggle="tooltip" data-placement="top" title="Sexo asignado al nacer">Sexo al nacer</th>
                                         <th scope="col" width="30%" class="text-uppercase"> Licenciatura</th>
                                         <th scope="col" width="25%" class="text-uppercase">Informe individual</th>
                                     </tr>

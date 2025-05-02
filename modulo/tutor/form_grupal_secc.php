@@ -82,7 +82,7 @@ if(isset($_SESSION['us_tutor'])){
       </div>
       <div class="row mt-0  justify-content-around">
         <?php
-        $query_exi = "SELECT est.matri_alu as matri, est.nombre, est.ap, est.am,  entrevista.lic as lice, entrevista.prom as promedio, prom.trimestre as trime, prom.prom_fin as pf FROM estudiante_tutor est_tutor LEFT join  ges_registro_alu est on est.matri_alu=est_tutor.matricula LEFT join entrevista_alumno entrevista on est_tutor.matricula=entrevista.matricula LEFT join ges_tutoria_grupal_1 prom on est_tutor.matricula=prom.matricula  and est_tutor.trimestre = prom.trim_informe where status_estudiante = 2 and  no_eco = ? and est_tutor.trimestre = ? ;";
+        $query_exi = "SELECT est.matri_alu as matri, est.nombre, est.ap, est.am,  entrevista.lic as lice, entrevista.prom as promedio, prom.trimestre as trime, prom.prom_fin as pf FROM estudiante_tutor est_tutor LEFT join  ges_registro_alu est on est.matri_alu=est_tutor.matricula LEFT join entrevista_alumno entrevista on est_tutor.matricula=entrevista.matricula LEFT join ges_tutoria_grupal_1 prom on est_tutor.matricula=prom.matricula  and est_tutor.trimestre = prom.trim_informe where status_estudiante IN (2,6) and  no_eco = ? and est_tutor.trimestre = ? ;";
 
           $stmt_exi = $connection->prepare($query_exi);
           $stmt_exi->execute(array($usuario, $trim));
@@ -310,7 +310,7 @@ if(isset($_SESSION['us_tutor'])){
                 </div>
                 <div class="row mt-0 pt-0 ml-3 pl-3 mr-3 pr-3">
                   <?php
-                  $query_alumnos = "SELECT est.matri_alu as matri, est.nombre as nombre, est.ap as ap, est.am as am FROM ges_registro_alu est LEFT join estudiante_tutor est_tutor on est.matri_alu=est_tutor.matricula LEFT join entrevista_alumno entrevista on est.matri_alu=entrevista.matricula where status_estudiante = 2 and no_eco = ? and est_tutor.trimestre = ? ;";
+                  $query_alumnos = "SELECT est.matri_alu as matri, est.nombre as nombre, est.ap as ap, est.am as am FROM ges_registro_alu est LEFT join estudiante_tutor est_tutor on est.matri_alu=est_tutor.matricula LEFT join entrevista_alumno entrevista on est.matri_alu=entrevista.matricula where status_estudiante IN (2,6) and no_eco = ? and est_tutor.trimestre = ? ;";
 
                   $stmt_02 = $connection->prepare($query_alumnos);
                   $stmt_02->execute(array($usuario, $trim));
@@ -376,7 +376,7 @@ if(isset($_SESSION['us_tutor'])){
 
                   <?php
                   $individualArray =[];
-                  $query_alumnos = "SELECT est.matri_alu as matri, est.nombre as nombre, est.ap as ap, est.am as am FROM ges_registro_alu est LEFT join estudiante_tutor est_tutor on est.matri_alu=est_tutor.matricula LEFT join entrevista_alumno entrevista on est.matri_alu=entrevista.matricula where status_estudiante = 2 and no_eco = ? and est_tutor.trimestre = ?  ;";
+                  $query_alumnos = "SELECT est.matri_alu as matri, est.nombre as nombre, est.ap as ap, est.am as am FROM ges_registro_alu est LEFT join estudiante_tutor est_tutor on est.matri_alu=est_tutor.matricula LEFT join entrevista_alumno entrevista on est.matri_alu=entrevista.matricula where status_estudiante IN (2,6) and no_eco = ? and est_tutor.trimestre = ?  ;";
 
                   $stmt_02 = $connection->prepare($query_alumnos);
                   $stmt_02->execute(array($usuario, $trim));
