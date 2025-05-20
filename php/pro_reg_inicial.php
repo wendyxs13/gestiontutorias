@@ -59,7 +59,7 @@
       
       /////$query_exi = "SELECT idges_registro_alu, nombre, matri_alu, correo, estado, codigo FROM ges_registro_alu WHERE matri_alu= ?;";
 
-      $sql_trim = " select * from cat_trimestre ORDER BY idcat_trimestre DESC LIMIT 1;";
+      $sql_trim = " select * from cat_trimestre where disponible = 1 ORDER BY idcat_trimestre DESC LIMIT 1;";
       $q = $connection->prepare($sql_trim);
       $q->execute();
       $total_trim=$q->rowCount();
