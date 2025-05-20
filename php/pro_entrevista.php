@@ -44,6 +44,7 @@
     $duda_md2 = verificaInput($_POST['txt29']);
     $duda_pq2 = verificaInput($_POST['txt30']);
     $turno = verificaInput($_POST['txt42']);
+    $tiempo_traslado = verificaInput($_POST['txt43']);
 
     $recursos = "";
     if (isset($_POST['check31'])) {
@@ -100,10 +101,10 @@
 
     if($total_exi==0){ /// if no existe entrevista del alumno inserta
 
-        $query_ins = "INSERT INTO entrevista_alumno (matricula, correo_alu, nombre, edo_civil, sexo, edad, hijos, depen, depen_n, trabajo, trabajo_l, prom, beca, t_beca, esc_m, esc_p, motivo, motivo_o, lic, xq_lic, xq_lic_o, c_laboral, m_laboral, horas_est, duda, duda_md, duda_pq, duda2, duda_md2, duda_pq2, recursos, recurso_o, espacios, espacio_otro1, espacios2, espacio_otro2, acti, acti_c, acti_d, tutoria, tutoria_otro, turno) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+        $query_ins = "INSERT INTO entrevista_alumno (matricula, correo_alu, nombre, edo_civil, sexo, edad, tiempo_traslado, hijos, depen, depen_n, trabajo, trabajo_l, prom, beca, t_beca, esc_m, esc_p, motivo, motivo_o, lic, xq_lic, xq_lic_o, c_laboral, m_laboral, horas_est, duda, duda_md, duda_pq, duda2, duda_md2, duda_pq2, recursos, recurso_o, espacios, espacio_otro1, espacios2, espacio_otro2, acti, acti_c, acti_d, tutoria, tutoria_otro, turno) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
         $stmt_ins  = $connection->prepare($query_ins);
-        $stmt_ins->execute(array($matricula, $correo, $nom, $edo_civ, $sexo, $edad, $hijos, $depen, $depen_n, $trabajo, $trabajo_l, $prom, $beca, $t_beca, $esc_m, $esc_p, $motivo, $motivo_o, $lic, $xq_lic, $xq_lic_o, $c_laboral, $m_laboral, $horas_est, $duda, $duda_md, $duda_pq, $duda2, $duda_md2, $duda_pq2, $recursos, $recurso_o, $espacios, $espacio_otro1, $espacios2, $espacio_otro2, $acti, $acti_c, $acti_d, $tutoria, $tutoria_otro, $turno));
+        $stmt_ins->execute(array($matricula, $correo, $nom, $edo_civ, $sexo, $edad, $tiempo_traslado, $hijos, $depen, $depen_n, $trabajo, $trabajo_l, $prom, $beca, $t_beca, $esc_m, $esc_p, $motivo, $motivo_o, $lic, $xq_lic, $xq_lic_o, $c_laboral, $m_laboral, $horas_est, $duda, $duda_md, $duda_pq, $duda2, $duda_md2, $duda_pq2, $recursos, $recurso_o, $espacios, $espacio_otro1, $espacios2, $espacio_otro2, $acti, $acti_c, $acti_d, $tutoria, $tutoria_otro, $turno));
         //$last_id   = $connection->lastInsertId();  ///último id insertado
         $total_ins = $stmt_ins->rowCount();
 

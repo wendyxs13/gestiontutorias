@@ -142,6 +142,23 @@ $usuario=($_SESSION['matri_tutoria']);
               </div>
             </div>
 
+            <div class="form-group row ">
+              <label for="txt43" class="col-md-2 col-form-label" ><b>¿Cuánto tiempo realizas de traslado de tu casa/trabajo a la Universidad?</b> </label>
+              <div class="col-md-6" >
+               
+                <select name="txt43" id="txt43" class="custom-select" required="" >
+                  <option value="">Seleccione una opción</option>
+                  <option value="30 min">30 minutos</option>
+                  <option value="45 min">45 minutos</option>
+                  <option value="60 min ">1 hora</option>
+                  <option value="90 min">1 hora 30 minutos</option>
+                  <option value="120 min ">2 horas</option>
+                  <option value="+ 120 min ">Más de 2 horas</option>
+                </select>
+
+              </div>
+            </div>
+
 <!---- otra etiqueta 1 ----->
             <div class="form-group row ">
               <label class="col-md-2 col-form-label"><b>¿Tienes hijos?</b></label>
