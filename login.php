@@ -67,7 +67,7 @@
               <div class="form-group row">
                 <label for="pass" class="col-md-4 col-form-label"><b>Contraseña: </b></label>
                 <div class="col-md-8">
-                  <input type="password" required class="form-control" id="pass" name="pass" placeholder="Contraseña" >
+                  <input type="password" required class="form-control" id="pass" name="pass" placeholder="Número económico" >
                 </div>
               </div>
 
