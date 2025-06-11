@@ -56,19 +56,6 @@
       include 'conn.php'; 
       include 'pro_correo.php'; 
       $connection = Connection::getInstance();
-      
-      /////$query_exi = "SELECT idges_registro_alu, nombre, matri_alu, correo, estado, codigo FROM ges_registro_alu WHERE matri_alu= ?;";
-
-      $sql_trim = " select * from cat_trimestre where disponible = 1 ORDER BY idcat_trimestre DESC LIMIT 1;";
-      $q = $connection->prepare($sql_trim);
-      $q->execute();
-      $total_trim=$q->rowCount();
-      if($total_trim > 0){
-        while ($row = $q->fetch()) {
-          $trim = "{$row['trimestre']}";
-        }
-      }
-
 
       $query_exi = "SELECT idges_registro_alu, nombre, matri_alu, correo, estado, codigo, matricula as est_tut FROM ges_registro_alu LEFT join estudiante_tutor on ges_registro_alu.matri_alu=estudiante_tutor.matricula WHERE matri_alu= ?;";
 
@@ -77,10 +64,23 @@
       $total=$stmt_exi->rowCount();
 
       if ( ($total == 0 ) || ($estudiante_tutor == NULL) ){
-        $query_ins2 = "INSERT INTO estudiante_tutor (matricula, trimestre, no_eco, status_estudiante) VALUES (?, ?, '1', '2');";
-        $stmt_ins2  = $connection->prepare($query_ins2);
-        $stmt_ins2->execute(array($matricula, $trim));
-        $total_ins2 = $stmt_ins2->rowCount();
+
+        $sql_trim = "SELECT * FROM cat_trimestre WHERE idcat_trimestre >= (SELECT idcat_trimestre FROM cat_trimestre WHERE disponible = 1 ORDER BY idcat_trimestre DESC LIMIT 1) ORDER BY idcat_trimestre ASC;";
+
+        $q = $connection->prepare($sql_trim);
+        $q->execute();
+        $total_trim=$q->rowCount();
+        if($total_trim > 0){
+          while ($row = $q->fetch()) {
+            $trim = "{$row['trimestre']}";
+
+            $query_ins2 = "INSERT INTO estudiante_tutor (matricula, trimestre, no_eco, status_estudiante) VALUES (?, ?, '1', '2');";
+            $stmt_ins2  = $connection->prepare($query_ins2);
+            $stmt_ins2->execute(array($matricula, $trim));
+            $total_ins2 = $stmt_ins2->rowCount();            
+          }
+        }
+
       }
 
       if($total > 0){
