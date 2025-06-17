@@ -179,17 +179,16 @@ if(isset($_SESSION['us_tutor'])){
                 $pdo = Connection::getInstance();
                 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+                ///$sql = "SELECT * from cat_trimestre where disponible = '1' ;";
+                $sql = "SELECT estudiante_tutor.trimestre as trime, count(matricula) from cat_trimestre, estudiante_tutor  where disponible = '1' and cat_trimestre.trimestre=estudiante_tutor.trimestre and  status_estudiante IN ('1', '2', '3', '6') AND no_eco= ? group by estudiante_tutor.trimestre;";
 
-                $sql = "SELECT * from cat_trimestre where disponible = '1' ;";
                 $q = $pdo->prepare($sql);
-                $q->execute();
+                $q->execute(array($usuario));
                 $total=$q->rowCount(); 
-
-           
 
                 if($total > 0){
                   while ($row = $q->fetch()) {
-                    $trimestre = "{$row['trimestre']}";
+                    $trimestre = "{$row['trime']}";
                   
                   ?>
                   <li class="nav-item btn_reporte">
@@ -200,7 +199,31 @@ if(isset($_SESSION['us_tutor'])){
                   </li>
                   <?php
                   }
+                }else{
+
+                  $sql2 = "SELECT * from cat_trimestre where disponible = 1 ORDER BY idcat_trimestre DESC LIMIT 1;";
+                  $q2 = $pdo->prepare($sql2);
+                  $q2->execute();
+                  $total2=$q2->rowCount(); 
+
+                  if($total2 > 0){
+                  while ($row2 = $q2->fetch()) {
+                    $trimestre = "{$row2['trimestre']}";
+                  
+                  ?>
+                  <li class="nav-item btn_reporte">
+                    <a class="nav-link" href="index_trim.php?x=<?php echo urlencode(base64_encode($trimestre)); ?>" >
+                      <i class="material-icons">calendar_month</i>
+                      TRIMESTRE <?php echo $trimestre; ?><br>
+                    </a>
+                  </li>
+                  <?php
+                  }
+                  
+
                 }
+
+              }
                 
               ?>
               </ul>
@@ -212,7 +235,7 @@ if(isset($_SESSION['us_tutor'])){
     
     <footer class="py-5 bg-primary mt-3 backBlue1" style="min-height: 10vh;">
       <div class="container">
-        <p class="m-0 text-center text-white ">Universidad Autónoma Metropolitana / Unidad Xochimilco / 2024</p>
+        <p class="m-0 text-center text-white ">Universidad Autónoma Metropolitana / Unidad Xochimilco / <?php echo date("Y");  ?></p>
       </div>
     </footer> 
 
