@@ -112,6 +112,24 @@ if(isset($_SESSION['us_tutor_ad'])){
     </div>
     <!-- modal -->
 
+    <!-- modal datos tutor -->
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel2" aria-hidden="true" id="modal_datos_tutor">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="text-uppercase" style="color: #1C499A;"><b>Ficha de información</b></h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div id="datos_x_tutor" class="pr-4 pl-4">
+
+              </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal datos tutor -->
+
 
 
 

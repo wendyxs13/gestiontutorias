@@ -80,7 +80,9 @@ if (!empty($_POST)) {
                       <tr>
                         <td class="text-left">
                               <!-- <a href="#" data-toggle="modal" data-target=".bd-example-modal-lg" onclick="ver_info_ini(<?php echo $matricula; ?>);"> </a> -->
-                           <?php echo $nombre." ".$ap." ".$am; ?>
+                          <span onclick="datos_tutor();" class="btn-link" style="cursor: pointer;" >
+                            <?php echo $nombre." ".$ap." ".$am; ?>
+                          </span>
                         </td>
                         <td><?php echo $correo; ?></td>
                         <td><?php echo $trimestre; ?></td>
@@ -189,6 +191,185 @@ if (!empty($_POST)) {
         
       }
       echo json_encode($response);
+    break;
+
+    case '4':
+      $num_eco =$_POST['num_eco'];
+
+      $sql = "SELECT * FROM ges_registro_tutor where num_eco = ?;";
+      $q = $db->prepare($sql);
+      $q->execute(array($num_eco));
+      $total=$q->rowCount();
+
+      $sexo_f = $sexo_m = "";
+
+      if ($total > 0) {
+        while ($row = $q->fetch()) {
+          $nom = "{$row['nombre']}";
+          $ap = "{$row['ap']}";
+          $am = "{$row['am']}";
+          $sexo = "{$row['sexo']}";
+          $estudios = "{$row['estudios']}";
+          $division = "{$row['division']}";
+          $id_depto = "{$row['depto']}";
+          $imparte = "{$row['imparte']}";
+          $correo_tutor = "{$row['correo']}";
+          $num_tutorados = "{$row['num_tutorados']}";
+
+
+          
+        }
+
+        if($sexo == "M"){
+            $sexo_m = "checked";
+        }if($sexo == "F"){
+            $sexo_f = "checked";
+        }
+
+        ?>
+
+        <form id="form_datos_tutor" class="pb-2 pt-2" >
+          <!-- <h3 class="encabezado1 mb-4 text-center"><b>Actualización de información</b></h3> -->
+        
+
+          <div class="form-group row ">
+            <label for="ap" class="col-md-4 col-form-label text-dark" ><b>Primer apellido:</b></label>
+            <div class="col-md-8" >
+              <input type="text" required class="form-control" id="ap" name="ap" maxlength="35" placeholder="Primer apellido" value="<?php echo $ap; ?>" disabled >
+            </div>
+          </div>
+
+          <div class="form-group row ">
+            <label for="am" class="col-md-4 col-form-label text-dark" ><b>Segundo apellido:</b></label>
+            <div class="col-md-8" >
+              <input type="text" required class="form-control" id="am" name="am" maxlength="35" placeholder="Segundo apellido" value="<?php echo $am; ?>" disabled >
+            </div>
+          </div>
+            
+
+          <div class="form-group row ">
+            <label for="nom" class="col-md-4 col-form-label text-dark" ><b>Nombre:</b></label>
+            <div class="col-md-8" >
+              <input type="text" required class="form-control" id="nom" name="nom" maxlength="35" placeholder="Nombre(s)" value="<?php echo $nom; ?>" disabled >
+            </div>
+          </div>
+
+          <div class="form-group row ">
+            <label for="radio5" class="col-md-4 col-form-label text-dark"><b>Sexo asignado al nacer:</b> </label>
+            <div class="col-md-8">
+              <div class="d-flex align-items-start">    
+
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="radio5" id="radio5-1" value="F" <?php echo $sexo_f; ?> disabled >
+                  <label class="form-check-label fuente14" for="radio5-1">
+                    Femenino
+                  </label>
+                </div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="form-check">
+                   <input class="form-check-input" type="radio" name="radio5" id="radio5-2" value="M" <?php echo $sexo_m; ?> disabled >
+                  <label class="form-check-label fuente14" for="radio5-2">
+                    Masculino
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="form-group row ">
+            <label for="division" class="col-md-4 col-form-label text-dark" ><b>División Académica:</b></label>
+            <div class="col-md-8" >
+              <select name="division" id="division" class="form-control" required  onChange="div_dpto();" disabled>
+                <option value="">Seleccione una opción</option>
+                <option value="CBS" <?php if($division == "CBS"){ echo "selected"; } ?> >CBS</option> 
+                <option value="CYAD" <?php if($division == "CYAD"){ echo "selected"; } ?> >CyAD</option> 
+                <option value="CSH" <?php if($division == "CSH"){ echo "selected"; } ?> >CSH</option> 
+              </select>
+            </div>
+          </div>
+
+          <div id="d_dpto">
+            <!---- d_dpto  ---->
+            <div class="form-group row ">
+              <label for="dpto" class="col-md-4 col-form-label text-dark" ><b>Departamento de Adscripción:</b></label>
+              <div class="col-md-8" >
+                <select name="dpto" id="dpto" class="custom-select" required disabled>
+                  <option value="" selected="selected">Elige una opci&oacute;n</option>
+                    <?php 
+                    $query_exi1 = "SELECT * FROM cat_div_dpto WHERE division= ?;";
+                    $stmt_exi1 = $db->prepare($query_exi1);
+                    $stmt_exi1->execute(array($division));
+                    $total1=$stmt_exi1->rowCount();
+
+                    if($total1 > 0){
+                        while ($row = $stmt_exi1->fetch()) {
+                            $id = "{$row['id_depto']}";
+                            $depto = "{$row['depto']}";
+
+                            if($id_depto == $id ){
+                                echo '<option value="'.$id.'" selected >'.$depto.'</option>';
+                            }else{
+                                echo '<option value="'.$id.'" >'.$depto.'</option>';
+                            }
+                        }
+                    }
+                    ?>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group row ">
+              <label for="imparte" class="col-md-4 col-form-label text-dark" ><b>¿En qué licenciatura imparte docencia?</b></label>
+              <div class="col-md-8" >
+                <select name="imparte" id="imparte" class="custom-select" required disabled >
+                  <option value="" selected="selected">Elige una opci&oacute;n</option>
+                  <?php 
+                    $query_exi2 = "SELECT * FROM cat_div_lic WHERE division= ?;";
+                    $stmt_exi2 = $db->prepare($query_exi2);
+                    $stmt_exi2->execute(array($division));
+                    $total2=$stmt_exi2->rowCount();
+
+                    while ($row = $stmt_exi2->fetch()) {
+                        $id_lic = "{$row['id_lic']}";
+                        $licenciatura = "{$row['licenciatura']}";
+
+                        if( ($imparte == $licenciatura) || ($imparte == $id_lic) ){
+                            echo '<option value="'.$id_lic.'" selected >'.$licenciatura.'</option>';
+                        }else{
+                            echo '<option value="'.$id_lic.'" >'.$licenciatura.'</option>';
+                        }
+                    }
+                  ?>
+                </select>
+              </div>
+            </div>
+
+            <!---- d_dpto  ---->
+          </div>
+
+          <div class="form-group row ">
+            <label for="ap" class="col-md-4 col-form-label text-dark" ><b>Correo electrónico institucional:</b></label>
+            <div class="col-md-8" >
+              <input type="text" required class="form-control" id="correo" name="correo" maxlength="35" placeholder="correo" value="<?php echo $correo_tutor; ?>" disabled >
+            </div>
+          </div>
+
+          <div class="form-group row ">
+            <label for="ap" class="col-md-4 col-form-label text-dark" ><b>Número de tutoradas y tutorados que puede atender por trimestre:</b></label>
+            <div class="col-md-8" >
+              <input type="text" required class="form-control" id="num_tutorados" name="num_tutorados" maxlength="35" placeholder="" value="<?php echo $num_tutorados; ?>" disabled>
+            </div>
+          </div>
+
+        </form>
+
+
+        <?php
+
+    }
+
+
     break;
 
 

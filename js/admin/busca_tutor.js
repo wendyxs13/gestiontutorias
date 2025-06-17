@@ -22,6 +22,8 @@
       }
     }
 
+    
+
 
     function ver_lista(trim_bus){
       var num_eco = document.getElementById("num_eco").value;
@@ -60,6 +62,22 @@
               alert("No se encontró algún informe para esta matrícula y trimestre.");
             }
             
+          }
+        });
+      }
+    }
+
+    function datos_tutor(){
+      var num_eco = document.getElementById("num_eco").value;
+
+      if(num_eco != ""){
+        $.ajax({
+          type:"POST",
+          url:"../../php/admin/buscaTutor.php",
+          data:{num_eco:num_eco,opc:4},
+          success:function(r){
+            $('#modal_datos_tutor').modal('show'); 
+            $('#datos_x_tutor').html(r);
           }
         });
       }
