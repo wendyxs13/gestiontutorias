@@ -23,6 +23,88 @@
       }
     }
 
+    function datos_estudiante(){
+      var matri = document.getElementById("matri").value;
+
+      if(matri != ""){
+        $.ajax({
+          type:"POST",
+          url:"../../php/admin/buscaEst.php",
+          data:{matri:matri,opc:3},
+          success:function(r){
+            $('#modal_datos_est').modal('show'); 
+            $('#datos_x_est').html(r);
+          }
+        });
+      }
+    }
+
+    function actual_estudiante(){
+      var matri = document.getElementById("matri").value;
+      var nom = document.getElementById("nom").value;
+      var ap = document.getElementById("ap").value;
+      var am = document.getElementById("am").value;
+
+      if (matri === "" || nom === "" || ap === "" ) {
+        swal("Datos incompletos", "Por favor completa todos los datos antes de continuar", "warning");
+        return;
+      }
+
+      swal({
+        title: "¿Estás seguro?",
+        text: "Verifica que todos los datos sean correctos antes de enviar.",
+        icon: "info",
+        buttons: ["Cancelar", "Sí, continuar"],
+        dangerMode: false,
+      }).then((willSave) => {
+          if (willSave) {
+  
+              $.ajax({
+                type:"POST",
+                url:"../../php/admin/buscaEst.php",
+                data:{matri:matri,nom:nom,ap:ap,am:am,opc:4},
+                dataType: "json",
+                /* success:function(r){
+                  $('#modal_datos_est').modal('hide'); 
+                  swal("Datos actualizados correctamente", {
+                        icon: "success",
+                    });
+                  $('#datos_x_est').html(r);
+                  
+                } */
+                success: function(response) {
+
+                  if (response.success) {
+
+                   swal({
+                      title: "",
+                      text: response.message,
+                      icon: "success",
+                      button: "Aceptar"
+                    }).then(() => {
+                      $('#modal_datos_est').modal('hide'); 
+                      busca_estudiante();
+                      // Opcional: recargar datos de la tabla
+                      // cargarDatosEstudiantes();
+                    });
+                  } else {
+                    swal("Error", response.message, "error");
+                  }
+                },
+                error: function() {
+                  swal("Error", "Hubo un problema al enviar los datos.", "error");
+                }
+
+              });
+          }
+      });
+         
+
+
+
+      
+    } ///fin funcion
+
 
 
 
